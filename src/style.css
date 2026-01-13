@@ -10,9 +10,22 @@
 
 
 
+
+
 @layer base {
-  .img {
-    @apply before:content[''] absolute;
+  /* .img {
+    @apply relative before:content['jouh'] before:absolute before:w-50 before:h-50 before:rounded-full before:bg-blue-900 ;
+  } */
+
+  .inputs div {
+
+    label {
+      @apply block;
+    }
+
+    input {
+       @apply ring ring-gray-400 rounded-md px-5 py-1;
+    }
   }
 }
 

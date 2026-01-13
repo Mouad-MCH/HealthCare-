@@ -9,18 +9,58 @@
   </head>
   <body class="flex-center min-h-dvh bg-primary">
     
-    <div class="container bg-white rounded-lg overflow-hidden shadow-sm w-155 flex min-h-75">
+    <div class="container relative bg-white rounded-lg overflow-hidden shadow-sm w-205 flex min-h-95">
+
+      <p id="error_msg" class="absolute hidden left-[50%] top-2.5 text-red-600 font-normal px-5 py-1 ring-1  ring-red-600 bg-red-300 rounded-lg">check if input vide</p>
+ 
       <div class="left-side flex-1 bg-scondary flex-center flex-col">
         <h1>healthcare</h1>
 
-        <div class="w-full relative">
-          <img src="public/doctor.png" alt="photo" class="img">
+        <div class="w-full">
+          <img src="public/doctor.png" alt="photo" class="img relative">
         </div>
 
       </div>
 
-      <div class="right-side flex-2">
+      <div class="right-side flex-2 p-5 flex justify-between items-center flex-col ">
+        <div class="inputs w-full p-5 grid grid-cols-2 gap-2">
 
+          <div class=""> 
+            <label for="name">Name</label>
+            <input type="text" id="name">
+          </div>
+          
+          <div class=""> 
+            <label for="prename">Prenome</label>
+            <input type="text" id="prenome">
+          </div>
+          
+          <div class=""> 
+            <label for="email">Email</label>
+            <input type="email" id="email">
+          </div>
+
+          <div class=""> 
+            <label for="telephone">Telephone</label>
+            <input type="tel" id="telephone">
+          </div>
+
+          <div class=""> 
+            <label for="date">Date</label>
+            <input type="date" id="date">
+          </div>
+
+
+          <div class=""> 
+            <label for="motif">Motif</label>
+            <input type="text" id="motif">
+          </div>
+
+        </div>
+
+
+        <button id="add_btn" class="px-3 py-1 rounded-lg bg-scondary text-white 
+                      cursor-pointer w-fit hover:bg-light transition-all duration-300">Ajouter la domande</button>
       </div>
     </div>
 
