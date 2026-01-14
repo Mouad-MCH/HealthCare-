@@ -10,14 +10,15 @@
 const inputs = document.querySelectorAll('input');
 const add_btn = document.getElementById("add_btn");
 
-const error_msg = document.getElementById("error_msg")
+const error_msg = document.getElementById("error_msg");
+const success_msg = document.getElementById("success_msg");
 
 
 /*---------------------*\
  * variable
 \ --------------------*/
 
-let data = [];
+let data = get_data("data") || [];
 
 
 /*---------------------*\
@@ -41,16 +42,20 @@ function add_info() {
   let motif = document.getElementById("motif").value;
 
 
-  data.push({prenome,name,email,telephone,date,motif})
+  data.push({ prenome, name, email, telephone, date, motif });
 
-  console.log(data)
+  set_data('data', data);
+
+  show_success();
+
+  inputs.forEach(el => el.value = "");
 
 }
 
 
 
 
-// function show Error
+// function show Error ❌
 
 function Error_fun() {
   let isEmpty = false;
@@ -71,4 +76,18 @@ function Error_fun() {
   return isEmpty;
 }
 
+// function show message success 👌
+
+function show_success() {
+  success_msg.classList.remove("hidden");
+
+  setTimeout(() => {
+    success_msg.classList.add("hidden")
+  }, 2000)
+}
+
+
+
+
 add_btn.addEventListener("click", add_info)
+

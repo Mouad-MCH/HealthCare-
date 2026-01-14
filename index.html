@@ -9,25 +9,33 @@
   </head>
   <body class="flex-center min-h-dvh bg-primary">
     
-    <div class="container relative bg-white rounded-lg overflow-hidden shadow-sm w-205 flex min-h-95">
+    <div class="container relative bg-white rounded-lg overflow-hidden shadow-sm w-205 flex max-sm:flex-col min-h-95">
 
-      <p id="error_msg" class="absolute hidden left-[50%] top-2.5 text-red-600 font-normal px-5 py-1 ring-1  ring-red-600 bg-red-300 rounded-lg">check if input vide</p>
+      <p id="error_msg" class="absolute hidden left-[50%] top-2.5 text-red-600 font-normal px-5 py-1 ring-1  ring-red-600 bg-red-300 rounded-md">check if input vide</p>
+
+      <p id="success_msg"
+        class="absolute hidden left-[50%] top-2.5 text-green-600 font-normal px-5 py-1 ring-1  ring-green-600 bg-green-300 rounded-sm">👌 
+        success</p>
  
-      <div class="left-side flex-1 bg-scondary flex-center flex-col">
+      <div class="left-side relative flex-1 bg-scondary flex-center flex-col">
         <h1>healthcare</h1>
 
-        <div class="w-full">
-          <img src="public/doctor.png" alt="photo" class="img relative">
+        <div class="w-full flex-center">
+          <img src="public/doctor.png" alt="photo" class="img relative max-sm:w-50">
+        </div>
+
+        <div class="jump_btn">
+          <img src="public/down-arrow.png" alt="jump" class="w-7.5">
         </div>
 
       </div>
 
       <div class="right-side flex-2 p-5 flex justify-between items-center flex-col ">
-        <div class="inputs w-full p-5 grid grid-cols-2 gap-2">
+        <div class="inputs w-full p-5 grid grid-cols-2 max-sm:grid-cols-1 max-sm:text-center gap-2">
 
           <div class=""> 
             <label for="name">Name</label>
-            <input type="text" id="name">
+            <input type="text" id="name" placeholder="Entre votre nome">
           </div>
           
           <div class=""> 
@@ -65,7 +73,8 @@
     </div>
 
 
-
+    <script src="src/getData.js"></script>
     <script type="module" src="/src/main.js"></script>
+    <script src="/src/jump.js"></script>
   </body>
 </html>

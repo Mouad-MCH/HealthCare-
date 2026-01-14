@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="/src/style.css" rel="stylesheet">
+  <!-- Font awsome cdn -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <title>Table</title>
+</head>
+<body class="flex-center min-h-dvh bg-primary">
+
+
+  <div class="container p-5 relative bg-white  rounded-lg overflow-hidden shadow-sm w-fit min-h-95 flex-center">
+
+    <div class="jump_btn left-5 top-5 rotate-90">
+      <img src="public/down-arrow.png" alt="jump" class="w-7.5">
+    </div>
+
+    <div class="w-full h-full">
+      <div class="filter flex-between mb-2">
+        <div class="search flex item-center gap-1">
+          <input type="date" class="ring ring-gray-400 rounded-md px-3 py-1">
+          <div class="search_icon icone">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+        </div>
+        
+
+        <div class="crud flex-center gap-1">
+          <div class="update icone">
+            <i class="fa-regular fa-pen-to-square"></i>
+          </div>
+
+          <div class="delete icone bg-red-400 hover:bg-red-500">
+            <i class="fa-regular fa-trash-can"></i>
+          </div>
+        </div>
+      </div>
+    
+      <div class="overflow-scroll h-50">
+      <div class="table w-full rounded-md overflow-hidden">
+        <table class="w-full text-sm text-left rtl:text-right text-body">
+          <thead class="bg-primary text-white">
+            <tr>
+              <th scope="col" class="th">id</th>
+              <th scope="col" class="th">Prenom</th>
+              <th scope="col" class="th">Nome</th>
+              <th scope="col" class="th">Date</th>
+              <th scope="col" class="th">telephone</th>
+              <th scope="col" class="th">Email</th>
+              <th scope="col" class="th">Motif</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr >
+              <td class="td">#dm3</td>
+              <td class="td">Mouad</td>
+              <td class="td">CHARADI</td>
+              <td class="td ">20/03/2026</td>
+              <td class="td">0697650440</td>
+              <td class="td">mouadcharadi021@gmail.com</td>
+              <td class="td">Nothing</td>
+            </tr>
+
+            <tr class="active">
+              <td class="td">#dm3</td>
+              <td class="td">Mouad</td>
+              <td class="td">CHARADI</td>
+              <td class="td ">20/03/2026</td>
+              <td class="td">0697650440</td>
+              <td class="td">mouadcharadi021@gmail.com</td>
+              <td class="td">Nothing</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="src/table.js"></script>
+  <script src="/src/getData.js"></script>
+  <script src="/src/jump.js"></script>
+</body>
+</html>

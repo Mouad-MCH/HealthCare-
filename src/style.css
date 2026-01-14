@@ -24,12 +24,47 @@
     }
 
     input {
-       @apply ring ring-gray-400 rounded-md px-5 py-1;
+      @apply ring ring-gray-400 rounded-md px-3 py-1;
     }
   }
+
+  .jump_btn {
+    @apply absolute -rotate-90 w-8.5 h-8.5 flex-center bg-primary rounded-full shadow-md sm:top-[50%] sm:left-full sm:translate-y-[-50%] cursor-pointer hover:bg-light transition-all duration-300 left-[50%] -bottom-4 translate-x-[-50%];
+  }
+
+  .icone {
+    @apply flex-center bg-primary hover:bg-light transition-all duration-300 w-7.5 h-7.5 rounded-sm cursor-pointer text-white;
+  }
+
+  .th {
+    @apply px-6 py-4 font-medium;
+  }
+
+  .td {
+    @apply px-6 py-4;
+  }
+
+  tbody {
+    tr {
+      @apply border-b hover:bg-gray-300 transition-all duration-300 cursor-pointer border-gray-400;
+    }
+
+    tr.active {
+      @apply bg-gray-300;
+    }
+    
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 
 @utility flex-center {
   @apply flex items-center justify-center;
+}
+
+@utility flex-between {
+  @apply flex items-center justify-between;
 }
