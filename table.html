@@ -12,7 +12,12 @@
 <body class="flex-center min-h-dvh bg-primary">
 
 
-  <div class="container p-5 relative bg-white  rounded-lg overflow-hidden shadow-sm w-fit min-h-95 flex-center">
+  <div class="container p-5 relative bg-white  rounded-lg overflow-hidden shadow-sm sm:min-w-255 w-fit min-h-155 flex-center">
+    <!-- Start Error message -->
+      <p id="error_msg"
+        class="absolute hidden left-[50%] translate-x-[-50%] top-2.5 text-red-600 font-normal px-5 py-1 ring-1  ring-red-600 bg-red-300 rounded-md">
+        check if filter input vide</p>
+    <!-- End Error message -->
 
     <div class="jump_btn left-5 top-5 rotate-90">
       <img src="public/down-arrow.png" alt="jump" class="w-7.5">
@@ -21,7 +26,7 @@
     <div class="w-full h-full">
       <div class="filter flex-between mb-2">
         <div class="search flex item-center gap-1">
-          <input type="date" class="ring ring-gray-400 rounded-md px-3 py-1">
+          <input type="date" id="search_date" class="ring ring-gray-400 rounded-md px-3 py-1">
           <div class="search_icon icone">
             <i class="fa-solid fa-magnifying-glass"></i>
           </div>
@@ -39,7 +44,7 @@
         </div>
       </div>
     
-      <div class="overflow-scroll h-50">
+      <div class="overflow-scroll h-90">
       <div class="table w-full rounded-md overflow-hidden">
         <table class="w-full text-sm text-left rtl:text-right text-body">
           <thead class="bg-primary text-white">
@@ -74,6 +79,16 @@
               <td class="td">mouadcharadi021@gmail.com</td>
               <td class="td">Nothing</td>
             </tr>
+
+            <tr>
+              <td class="td">#dm3</td>
+              <td class="td">Mouad</td>
+              <td class="td">CHARADI</td>
+              <td class="td ">20/03/2026</td>
+              <td class="td">0697650440</td>
+              <td class="td">mouadcharadi021@gmail.com</td>
+              <td class="td">Nothing</td>
+            </tr>
             
           </tbody>
         </table>
@@ -83,8 +98,8 @@
 
   </div>
 
-  <script src="src/table.js"></script>
-  <script src="/src/getData.js"></script>
+  <!-- <script src="/src/getData.js"></script> -->
+  <script type="module" src="src/table.js"></script>
   <script src="/src/jump.js"></script>
 </body>
 </html>

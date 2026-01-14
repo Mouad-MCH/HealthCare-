@@ -1,3 +1,4 @@
+import { get_data, set_data } from "./getData.js";
 
 /*---------------------*\
  * DATABASE
@@ -40,9 +41,10 @@ function add_info() {
   let email = document.getElementById("email").value;
   let date = document.getElementById("date").value;
   let motif = document.getElementById("motif").value;
+  let id = data.length + 1;
 
 
-  data.push({ prenome, name, email, telephone, date, motif });
+  data.push({id,prenome, name, email, telephone, date, motif });
 
   set_data('data', data);
 
@@ -61,9 +63,10 @@ function Error_fun() {
   let isEmpty = false;
   inputs.forEach(el => {
     if(el.value === "") {
-      isEmpty = true
+      isEmpty = true;
+      el.classList.add("r")
       return;
-    }
+    }else { el.classList.remove("r") }
   })
 
   if(isEmpty) {
@@ -85,8 +88,6 @@ function show_success() {
     success_msg.classList.add("hidden")
   }, 2000)
 }
-
-
 
 
 add_btn.addEventListener("click", add_info)

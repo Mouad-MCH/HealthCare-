@@ -11,12 +11,17 @@
     
     <div class="container relative bg-white rounded-lg overflow-hidden shadow-sm w-205 flex max-sm:flex-col min-h-95">
 
-      <p id="error_msg" class="absolute hidden left-[50%] top-2.5 text-red-600 font-normal px-5 py-1 ring-1  ring-red-600 bg-red-300 rounded-md">check if input vide</p>
+      <!-- Start Error message -->
+      <p id="error_msg" class="absolute z-50 translate-x-[-50%] hidden left-[50%] top-5.5 sm:top-2.5 text-red-600 font-normal px-5 py-1 ring-1  ring-red-600 bg-red-300 rounded-md">check if input vide</p>
+      <!-- End Error message -->
 
+      <!-- Start success message -->
       <p id="success_msg"
-        class="absolute hidden left-[50%] top-2.5 text-green-600 font-normal px-5 py-1 ring-1  ring-green-600 bg-green-300 rounded-sm">👌 
+        class="absolute hidden translate-x-[-50%] left-[50%] top-5.5 sm:top-2.5 text-green-600 font-normal px-5 py-1 ring-1  ring-green-600 bg-green-300 rounded-sm">👌 
         success</p>
- 
+        <!-- End success message -->
+        
+  <!-- Start Left Side -->
       <div class="left-side relative flex-1 bg-scondary flex-center flex-col">
         <h1>healthcare</h1>
 
@@ -29,7 +34,9 @@
         </div>
 
       </div>
+  <!-- End Left Side -->
 
+  <!-- Start Right Side -->
       <div class="right-side flex-2 p-5 flex justify-between items-center flex-col ">
         <div class="inputs w-full p-5 grid grid-cols-2 max-sm:grid-cols-1 max-sm:text-center gap-2">
 
@@ -70,11 +77,14 @@
         <button id="add_btn" class="px-3 py-1 rounded-lg bg-scondary text-white 
                       cursor-pointer w-fit hover:bg-light transition-all duration-300">Ajouter la domande</button>
       </div>
+  <!-- End Left Side -->
+  
     </div>
 
 
-    <script src="src/getData.js"></script>
+
     <script type="module" src="/src/main.js"></script>
+    <!-- <script src="src/getData.js"></script> -->
     <script src="/src/jump.js"></script>
   </body>
 </html>
