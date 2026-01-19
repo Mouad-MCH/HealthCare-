@@ -24,6 +24,7 @@
     </div>
 
     <div class="w-full h-full">
+      <!-- Start filter -->
       <div class="filter flex-between mb-2">
         <div class="search flex item-center gap-1">
           <input type="date" id="search_date" class="ring ring-gray-400 rounded-md px-3 py-1">
@@ -43,7 +44,10 @@
           </div>
         </div>
       </div>
-    
+
+      <!-- End filter -->
+
+      <!-- Start table -->
       <div class="overflow-scroll h-90">
       <div class="table w-full rounded-md overflow-hidden">
         <table class="w-full text-sm text-left rtl:text-right text-body">
@@ -60,7 +64,7 @@
           </thead>
           <tbody>
 
-            <tr >
+            <!-- <tr >
               <td class="td">#dm3</td>
               <td class="td">Mouad</td>
               <td class="td">CHARADI</td>
@@ -88,11 +92,18 @@
               <td class="td">0697650440</td>
               <td class="td">mouadcharadi021@gmail.com</td>
               <td class="td">Nothing</td>
-            </tr>
+            </tr> -->
             
           </tbody>
         </table>
       </div>
+      </div>
+      <!-- End table -->
+
+      <!-- Start pagination -->
+      <div class="pagination mt-5 justify-end flex-center gap-2">
+        <button id="left_btn" class="icone"><i class="fa-solid fa-arrow-left"></i></button>
+        <button id="right_btn"  class="icone"><i class="fa-solid fa-arrow-right"></i></button>
       </div>
     </div>
 

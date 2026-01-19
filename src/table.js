@@ -1,5 +1,5 @@
 import { get_data, set_data } from "./getData.js";
-import { jump_to_update } from "./getData.js";
+// import { jump_to_update } from "./getData.js";
 
 /*---------------------*\
  * DOM variable
@@ -12,12 +12,15 @@ let update_btn = document.querySelector(".update");
 let search_icon = document.querySelector(".search_icon");
 let message_error = document.getElementById('error_msg');
 
+let left_btn = document.getElementById("left_btn");
+let right_btn = document.getElementById("right_btn")
+
 /*---------------------*\
  * variable
 \ --------------------*/
 
-
-
+let counter = 2;
+let pages = 5;
 
 /*---------------------*\
  * FITCH API
@@ -27,10 +30,38 @@ let message_error = document.getElementById('error_msg');
  * Functions
 \ --------------------*/
 
+right_btn.onclick = () => {
+  if(!get_data('counter'))
+    set_data('counter', '1')
+  let c = get_data('counter');
+  c++;
+  set_data('counter', c);
+  location.reload();
+}
+
+left_btn.onclick = () => {
+  let c = get_data('counter')
+  
+  c--;
+  set_data('counter', c);
+  location.reload();
+}
+
 function add_info_table() {
   let dt = get_data('data') || [];
-  dt.forEach((el , i) => {
-    tr_html(el.id, el.prenome, el.name, el.email, el.date, el.telephone, el.motif);
+
+  let counter = get_data("counter") || 1;
+  const tot = Math.ceil(dt.length / pages);
+
+  left_btn.disabled = counter === 1;
+  right_btn.disabled = tot === 0 || counter === tot;
+
+  let start = (counter - 1) * pages;
+  let end = start + pages;
+
+ 
+  dt.slice(start,end).forEach((el , i) => {
+     tr_html(el.id, el.prenome, el.name, el.email, el.date, el.telephone, el.motif);
   })
   add_active();
 }
@@ -167,7 +198,8 @@ function find_element_ID(id) {
   return element
 }
 
+
 delete_btn.addEventListener("click", delet);
 update_btn.addEventListener("click", update);
 document.addEventListener('DOMContentLoaded', add_info_table);
-search_icon.addEventListener("click", filter)
+search_icon.addEventListener("click", filter);

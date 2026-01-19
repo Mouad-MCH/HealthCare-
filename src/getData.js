@@ -14,7 +14,7 @@ export function get_data(key) {
 // update
 
 export function jump_to_update(element) {
-  let name = document.getElementById('name').innerHTML;
+  let name = document.getElementById('name').value;
   let prenome = document.getElementById('prenome').value;
   let date = document.getElementById('date').value;
   let telephone = document.getElementById('telephone').value;
