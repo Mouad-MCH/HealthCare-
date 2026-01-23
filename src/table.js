@@ -1,5 +1,5 @@
 import { get_data, set_data } from "./getData.js";
-// import { jump_to_update } from "./getData.js";
+//  import { jump_to_update } from "./getData.js";
 
 /*---------------------*\
  * DOM variable
@@ -15,11 +15,15 @@ let message_error = document.getElementById('error_msg');
 let left_btn = document.getElementById("left_btn");
 let right_btn = document.getElementById("right_btn")
 
+let update_form = document.querySelector('.update_form');
+let update_form_btn = document.querySelector(".update_form_btn");
+
+let container = document.querySelector(".container");
+
 /*---------------------*\
  * variable
 \ --------------------*/
 
-let counter = 2;
 let pages = 5;
 
 /*---------------------*\
@@ -133,10 +137,33 @@ function update() {
   let tr = document.querySelectorAll("tbody tr");
   let e;
   tr.forEach(el => { if (el.classList.contains("active")) e = el });
-  let element = find_element_ID(e.children[0].textContent);
+  // console.log(e.children[0].id)
+    if(!e) {
+    error()
+    return
+  }
 
+  let element = find_element_ID(e.children[0].id);
+
+  update_form.classList.remove("hidden")
   jump_to_update(element)
 
+}
+
+function jump_to_update(element) {
+  let nom = document.getElementById('nome').value;
+  let prenome = document.getElementById('prenome').value;
+  let date = document.getElementById('date').value;
+  let telephone = document.getElementById('telephone').value;
+  let email = document.getElementById('email').value;
+  let motif = document.getElementById('motif').value;
+
+  nom = element.name;
+  prenome = element.prenome;
+  date = element.date;
+  telephone = element.telephone;
+  email = element.email;
+  motif = element.motif;
 }
 
 

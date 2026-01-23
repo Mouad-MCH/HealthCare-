@@ -12,7 +12,7 @@
 <body class="flex-center min-h-dvh bg-primary">
 
 
-  <div class="container p-5 relative bg-white  rounded-lg overflow-hidden shadow-sm sm:min-w-255 w-fit min-h-155 flex-center">
+  <div class="container p-5 relative bg-white  rounded-lg overflow-hidden shadow-sm lg:min-w-255 w-fit min-h-155 flex-center">
     <!-- Start Error message -->
       <p id="error_msg"
         class="absolute hidden left-[50%] translate-x-[-50%] top-2.5 text-red-600 font-normal px-5 py-1 ring-1  ring-red-600 bg-red-300 rounded-md">
@@ -46,6 +46,45 @@
       </div>
 
       <!-- End filter -->
+
+      <!-- Start Update form -->
+
+      <div class="absolute update_form hidden grid gird-cols-1 lg:grid-cols-2 lg:gap-x-3 p-5 w-fit gap-1 shadow-lg lg:min-w-200 h-fit left-[50%] top-[50%] rounded-md translate-[-50%] bg-light">
+        <div>
+          <label for="nome">Nome</label>
+          <input type="text" id="nome">
+        </div>
+
+        <div>
+          <label for="Prenom">Prenom</label>
+          <input type="text" id="prenome">
+        </div>
+
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email">
+        </div>
+
+        <div>
+          <label for="telephone">Telephone</label>
+          <input type="tel" id="telephone">
+        </div>
+
+        <div>
+          <label for="date">Date</label>
+          <input type="date" id="date">
+        </div>
+
+        <div>
+          <label for="motif">Motif</label>
+          <input type="motif" id="motif">
+        </div>
+
+        <button class="update_form_btn px-5 py-2 shadow-xl rounded-lg font-bold bg-primary  mt-5 ring hover:ring-primary hover:bg-light transition-all duration-300 cursor-pointer text-white">Update</button>
+
+      </div>
+
+      <!-- End Update form -->
 
       <!-- Start table -->
       <div class="overflow-scroll h-90">

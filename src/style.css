@@ -17,14 +17,23 @@ body { font-family: Arial, Helvetica, sans-serif }
     @apply relative before:content['jouh'] before:absolute before:w-50 before:h-50 before:rounded-full before:bg-blue-900 ;
   } */
 
+
+
+  label {
+   @apply block;
+  }
+
+  .update_form {
+
+    & input {
+      @apply ring-1 w-full p-2 rounded-md outline-0;
+    }
+  }
+
   .inputs div {
 
-    label {
-      @apply block;
-    }
-
     input {
-      @apply ring ring-gray-400 rounded-md px-3 py-1;
+      @apply ring ring-gray-400 rounded-md max-md:w-45 px-3 py-1;
     }
 
     input.r {
