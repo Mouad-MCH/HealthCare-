@@ -9,17 +9,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
   <title>Table</title>
 </head>
-<body class="flex-center min-h-dvh bg-primary">
+<body class="flex-center min-h-dvh bg-primary dark:bg-drak-light">
 
 
-  <div class="container p-5 relative bg-white  rounded-lg overflow-hidden shadow-sm lg:min-w-255 w-fit min-h-155 flex-center">
+  <div class="container dark:bg-scondary-dark p-5 relative bg-white  rounded-lg overflow-hidden shadow-sm lg:min-w-255 w-fit min-h-155 flex-center">
     <!-- Start Error message -->
       <p id="error_msg"
         class="absolute hidden left-[50%] translate-x-[-50%] top-2.5 text-red-600 font-normal px-5 py-1 ring-1  ring-red-600 bg-red-300 rounded-md">
         check if filter input vide</p>
     <!-- End Error message -->
 
-    <div class="jump_btn left-5 top-5 rotate-90">
+    <div class="jump_btn dark:bg-primary-dark left-5 top-5 rotate-90">
       <img src="public/down-arrow.png" alt="jump" class="w-7.5">
     </div>
 
@@ -27,7 +27,8 @@
       <!-- Start filter -->
       <div class="filter flex-between mb-2">
         <div class="search flex item-center gap-1">
-          <input type="date" id="search_date" class="ring ring-gray-400 rounded-md px-3 py-1">
+          <input type="date" id="search_date">
+          <input type="text" placeholder="Recherche...">
           <div class="search_icon icone">
             <i class="fa-solid fa-magnifying-glass"></i>
           </div>
@@ -49,7 +50,7 @@
 
       <!-- Start Update form -->
 
-      <div class="absolute update_form hidden grid gird-cols-1 lg:grid-cols-2 lg:gap-x-3 p-5 w-fit gap-1 shadow-lg lg:min-w-200 h-fit left-[50%] top-[50%] rounded-md translate-[-50%] bg-light">
+      <div class="absolute update_form hidden grid gird-cols-1 lg:grid-cols-2 lg:gap-x-3 p-5 w-fit gap-1 shadow-lg lg:min-w-200 h-fit left-[50%] top-[50%] rounded-md translate-[-50%] bg-light dark:bg-scondary-dark">
         <div>
           <label for="nome">Nome</label>
           <input type="text" id="nome">
@@ -80,7 +81,7 @@
           <input type="motif" id="motif">
         </div>
 
-        <button class="update_form_btn px-5 py-2 shadow-xl rounded-lg font-bold bg-primary  mt-5 ring hover:ring-primary hover:bg-light transition-all duration-300 cursor-pointer text-white">Update</button>
+        <button class="update_form_btn px-5 py-2 shadow-xl rounded-lg font-bold bg-primary  mt-5 ring hover:ring-primary hover:bg-light dark:bg-primary-dark dark:hover:bg-drak-light dark:hover:ring-primary-dark transition-all duration-300 cursor-pointer text-white">Update</button>
 
       </div>
 
@@ -90,7 +91,7 @@
       <div class="overflow-scroll h-90">
       <div class="table w-full rounded-md overflow-hidden">
         <table class="w-full text-sm text-left rtl:text-right text-body">
-          <thead class="bg-primary text-white">
+          <thead class="bg-primary dark:bg-primary-dark text-white">
             <tr>
               <th scope="col" class="th">id</th>
               <th scope="col" class="th">Prenom</th>

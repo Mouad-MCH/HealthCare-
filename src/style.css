@@ -1,11 +1,24 @@
 @import "tailwindcss";
 
+/* @custom-variant dark (&:where(.dark, .dark *)); */
+/* @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *)); */
+
 @theme {
   --color-primary: #41B3CD;
   --color-scondary: #53C7E0;
   --color-light: #68DDF6;
   --text-color: #fff;
   --text-color-dark: #000;
+
+  /* Dark Mode Colors */
+
+  --color-primary-dark: #1A1B37;
+  --color-scondary-dark: #314175;
+  --text-white: #ffff;
+  --color-drak-light: #30364F;
+  --color-active: #F0F0DB;
+  --color-row: #ACBAC4;
+
 }
 
 
@@ -17,23 +30,27 @@ body { font-family: Arial, Helvetica, sans-serif }
     @apply relative before:content['jouh'] before:absolute before:w-50 before:h-50 before:rounded-full before:bg-blue-900 ;
   } */
 
-
-
   label {
-   @apply block;
+   @apply block dark:text-white;
+  }
+
+  .search {
+    & input {
+      @apply ring ring-gray-400 dark:text-white rounded-md px-3 py-1;
+    }
   }
 
   .update_form {
 
     & input {
-      @apply ring-1 w-full p-2 rounded-md outline-0;
+      @apply ring-1 w-full p-2 rounded-md outline-0 dark:text-white;
     }
   }
 
   .inputs div {
 
     input {
-      @apply ring ring-gray-400 rounded-md max-md:w-45 px-3 py-1;
+      @apply ring ring-gray-400 dark:text-white rounded-md max-md:w-45 px-3 py-1;
     }
 
     input.r {
@@ -42,11 +59,11 @@ body { font-family: Arial, Helvetica, sans-serif }
   }
 
   .jump_btn {
-    @apply absolute -rotate-90 w-8.5 h-8.5 flex-center bg-primary rounded-full shadow-md sm:top-[50%] sm:left-full sm:translate-y-[-50%] cursor-pointer hover:bg-light transition-all duration-300 left-[50%] -bottom-4 translate-x-[-50%];
+    @apply absolute -rotate-90 w-8.5 h-8.5 flex-center bg-primary rounded-full shadow-md sm:top-[50%] sm:left-full sm:translate-y-[-50%] cursor-pointer hover:bg-light transition-all duration-300 left-[50%] -bottom-4 translate-x-[-50%] dark:hover:bg-primary-dark dark:bg-scondary-dark;
   }
 
   .icone {
-    @apply flex-center bg-primary hover:bg-light transition-all duration-300 w-7.5 h-7.5 rounded-sm cursor-pointer text-white;
+    @apply flex-center bg-primary hover:bg-light dark:bg-primary-dark dark:hover:bg-drak-light transition-all duration-300 w-7.5 h-7.5 rounded-sm cursor-pointer text-white;
   }
 
   .th {
@@ -59,17 +76,17 @@ body { font-family: Arial, Helvetica, sans-serif }
 
   tbody {
     tr {
-      @apply border-b hover:bg-gray-300 transition-all duration-300 cursor-pointer border-gray-400;
+      @apply border-b hover:bg-gray-300 dark:bg-row transition-all duration-300 cursor-pointer border-gray-400;
     }
 
     tr.active {
-      @apply bg-[#F3F1FF];
+      @apply bg-[#F3F1FF] dark:bg-active;
     }
     
   }
 
   h1 {
-    @apply font-bold text-xl;
+    @apply font-bold text-xl dark:text-white;
   }
 
 }
