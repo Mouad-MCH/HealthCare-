@@ -30,7 +30,6 @@ let data = get_data("data") || [];
  * Functions
 \ --------------------*/
 
-console.log(inputs)
 
 function add_info() {
   if(Error_fun()) return
@@ -53,8 +52,6 @@ function add_info() {
   inputs.forEach(el => el.value = "");
 
 }
-
-
 
 
 // function show Error ❌

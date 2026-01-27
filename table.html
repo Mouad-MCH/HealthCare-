@@ -12,10 +12,10 @@
 <body class="flex-center min-h-dvh bg-primary dark:bg-drak-light">
 
 
-  <div class="container dark:bg-scondary-dark p-5 relative bg-white  rounded-lg overflow-hidden shadow-sm lg:min-w-255 w-fit min-h-155 flex-center">
+  <div class="container  dark:bg-scondary-dark p-5 relative bg-white  rounded-lg overflow-hidden shadow-sm lg:min-w-255 w-fit min-h-155 max-sm:h-screen flex-center max-sm:pt-30">
     <!-- Start Error message -->
       <p id="error_msg"
-        class="absolute hidden left-[50%] translate-x-[-50%] top-2.5 text-red-600 font-normal px-5 py-1 ring-1  ring-red-600 bg-red-300 rounded-md">
+        class="absolute hidden left-[50%] translate-x-[-50%] top-2.5 text-error font-normal px-5 py-1 ring-1  ring-error bg-red-300 rounded-md">
         check if filter input vide</p>
     <!-- End Error message -->
 
@@ -26,9 +26,9 @@
     <div class="w-full h-full">
       <!-- Start filter -->
       <div class="filter flex-between mb-2">
-        <div class="search flex item-center gap-1">
+        <div class="search flex max-sm:flex-col item-center gap-1">
           <input type="date" id="search_date">
-          <input type="text" placeholder="Recherche...">
+          <input type="text" id="recherche" placeholder="Recherche...">
           <div class="search_icon icone">
             <i class="fa-solid fa-magnifying-glass"></i>
           </div>
@@ -50,7 +50,8 @@
 
       <!-- Start Update form -->
 
-      <div class="absolute update_form hidden grid gird-cols-1 lg:grid-cols-2 lg:gap-x-3 p-5 w-fit gap-1 shadow-lg lg:min-w-200 h-fit left-[50%] top-[50%] rounded-md translate-[-50%] bg-light dark:bg-scondary-dark">
+      <div class="modal-overlay hidden"></div>
+      <div class="update_form absolute hidden  grid gird-cols-1 lg:grid-cols-2 lg:gap-x-3 p-5 w-fit gap-1 shadow-lg lg:min-w-200 h-fit left-[50%] top-[50%] rounded-md translate-[-50%] bg-light dark:bg-scondary-dark z-50">
         <div>
           <label for="nome">Nome</label>
           <input type="text" id="nome">

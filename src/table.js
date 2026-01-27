@@ -17,8 +17,17 @@ let right_btn = document.getElementById("right_btn")
 
 let update_form = document.querySelector('.update_form');
 let update_form_btn = document.querySelector(".update_form_btn");
+let modal_overlay = document.querySelector(".modal-overlay");
 
 let container = document.querySelector(".container");
+
+
+let nom = document.getElementById('nome');
+let prenome = document.getElementById('prenome');
+let date = document.getElementById('date');
+let telephone = document.getElementById('telephone');
+let email = document.getElementById('email');
+let motif = document.getElementById('motif');
 
 /*---------------------*\
  * variable
@@ -117,7 +126,6 @@ function delet() {
 
 function delet_data(el) {
   let dt = get_data('data') || [];
-  console.log(el)
 
   el.forEach(elem => {
     dt.forEach((e,i) => {
@@ -146,36 +154,56 @@ function update() {
   let element = find_element_ID(e.children[0].id);
 
   update_form.classList.remove("hidden")
-  jump_to_update(element)
+  modal_overlay.classList.remove("hidden")
+  jump_to_update(...element)
 
 }
 
 function jump_to_update(element) {
-  let nom = document.getElementById('nome').value;
-  let prenome = document.getElementById('prenome').value;
-  let date = document.getElementById('date').value;
-  let telephone = document.getElementById('telephone').value;
-  let email = document.getElementById('email').value;
-  let motif = document.getElementById('motif').value;
 
-  nom = element.name;
-  prenome = element.prenome;
-  date = element.date;
-  telephone = element.telephone;
-  email = element.email;
-  motif = element.motif;
+  nom.value = element.name;
+  prenome.value = element.prenome;
+  date.value = element.date;
+  telephone.value = element.telephone;
+  email.value = element.email;
+  motif.value = element.motif;
+
+  update_form_btn.addEventListener('click', () => {
+    let dt = get_data("data") || [];
+
+    dt.forEach(el => {
+      if(el.id === element.id) {
+        el.name = nom.value;
+        el.prenome = prenome.value;
+        el.date = date.value;
+        el.telephone = telephone.value;
+        el.email = email.value;
+        el.motif = motif.value;
+      }
+    })
+
+    set_data('data', dt);
+
+    update_form.classList.add("hidden")
+    modal_overlay.classList.add("hidden")
+    location.reload();
+  })
+
 }
 
 
 // function filter by date
 
 function filter() {
-  if (error()) return
+  // if (error()) return
   let date = document.querySelector("#search_date").value;
+  let recherche = document.querySelector("#recherche").value;
   let tr = document.querySelectorAll("tbody tr");
 
-  let fil_el = find_element_date("date", date)
-  console.log(fil_el)
+  let fil_el = find_element_date("date", date);
+
+  // filter by name
+  fil_el = recherche.length >0 ? fil_el.filter(el => find_element_ID(el)[0].name === recherche) : fil_el;
 
   tr.forEach((el) => {
     el.classList.add("hidden");

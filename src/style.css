@@ -13,11 +13,17 @@
   /* Dark Mode Colors */
 
   --color-primary-dark: #1A1B37;
-  --color-scondary-dark: #314175;
-  --text-white: #ffff;
+  --color-scondary-dark: #1e293b;
+  --text-white: #f1f5f9;
   --color-drak-light: #30364F;
   --color-active: #F0F0DB;
   --color-row: #ACBAC4;
+
+  --color-error: #ef4444;
+  --color-success: #10b981;
+
+
+  --color-button-shadow: rgba(59, 130, 246, 0.3);
 
 }
 
@@ -87,6 +93,12 @@ body { font-family: Arial, Helvetica, sans-serif }
 
   h1 {
     @apply font-bold text-xl dark:text-white;
+  }
+
+  /* modal-overlay */
+
+  .modal-overlay {
+    @apply fixed top-0 left-0 bg-black opacity-70 w-full h-full inset-0 z-50;
   }
 
 }
